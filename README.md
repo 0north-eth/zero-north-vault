@@ -27,7 +27,7 @@ Zero North Vault (*ZeroNorthVault*) is your personal secret passcode generator.
 **ONLY you** own the `.exe` and the encryption logic. Store it locally. Use it offline.
 
 - Pick a key word to use as the password for your string of text (infinite combinations), encrypt. Enter the same key word and string and decrypt.
-- Each `.exe` is **cryptographically distinct**. It is **uncrackable** using other user's vaults, unless theirs are identical builds.  
+- Each `.exe` is **cryptographically distinct**. It is **unable to be deciphered** using other user's vaults, unless theirs are identical builds.  
 - The only way to decrypt what it encrypts is through owning the machine output (.exe seeded program) itself.
 
 **Zero North Vault (zkVault)** is a dark-mode, black-box, air-gapped, artifact-bound symmetric encryption app. 
@@ -46,26 +46,9 @@ A language only you (or a loved one you shared the program with) can ever speak.
 
 ---
 
-### 🔐 How it works
+### Core Innovation
 
-Every `.exe` is generated with:
-
-- A high-entropy cryptographic seed  
-- Custom AES runtime logic
-- A static genesis timestamp (`vault-genesis.txt`)  
-- A SHA-256 logic fingerprint (`vaultproof.json`)  
-
-You receive:
-- A .zip that packs up your encryption `.exe`  
-- A proof-of-build artifact  
-- A unique cipher engine that runs fully offline
-
----
-
-### 🧠 Isn’t this just a toy?
-
-No.  
-It’s actually a cryptographic object.
+Individualized cryptographic AES UX objects.
 
 > 🔻 You don’t store secrets in the cloud.  
 > 🔺 Zero North _generates_ an little universe for your secrets.
@@ -77,16 +60,30 @@ Zero North Vault flips the security model a bit and gives you the tools to prote
 
 ---
 
-### 🛠 Usage
+### 🔐 How it works
+
+Every `.exe` is generated with:
+
+- A high-entropy cryptographic seed  
+- Custom AES runtime logic
+- A static build timestamp embedded at generation time (`vault-genesis.txt`)  
+- A SHA-256 logic fingerprint (`vaultproof.json`)  
+
+You receive:
+- A .zip that packs up your encryption `.exe`  
+- A proof-of-build artifact  
+- A unique cipher engine that runs fully offline
+
+---
+
+### Usage
 
 This repo contains the **frontend only, sorry.**.
 
 To use the full system:
-1. Visit my Devpost website (currently keeping hidden because I think my droplet would blow up) 
-2. Fetch your vault with my API and I'll generate you an encryption environment
-3. Encode or decode strings using your `.exe`  
-4. Optionally verify build authenticity using `verifyProof.js`  
-5. Profit?
+1. Check the demo vaults in my deployments
+2. Encode or decode strings using your `.exe`  
+3. Optionally verify build authenticity using `verifyProof.js`  
 
 ---
 
@@ -101,8 +98,6 @@ node verifyProof.js
 It confirms the artifact's logic fingerprint, timestamp, and seed integrity.
 
 This reminds me of those spy tools from when I was a kid, kind of.
-
-**This is the working artifact. Tell that VC to go decrypt this: b4e44884ab88c27e7cf8db3b86bae7ba.9fa1... (They won’t. You will. That’s the point.)  Say what you need bro, get it out. Delete it after. Spin up another vault.**
 
 ---
 
